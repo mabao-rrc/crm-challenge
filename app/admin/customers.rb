@@ -1,9 +1,6 @@
 # Optional: Only needed if you plan to use validations like `validates :image, attached: true`
 require "active_storage_validations"
 
-# Needed to use `url_for` inside ActiveAdmin for displaying images
-include Rails.application.routes.url_helpers
-
 # Register the Customer model in ActiveAdmin
 ActiveAdmin.register Customer do
   # Allow these parameters for mass assignment through ActiveAdmin forms
@@ -30,9 +27,9 @@ ActiveAdmin.register Customer do
       row :email_address
       row :notes
       row :image do |customer|
-        # Check if an image is attached, and display it if present
+        # Check if an image is attached, and display it if present using routing helpers
         if customer.image.attached?
-          image_tag url_for(customer.image), width: 150
+          image_tag helpers.url_for(customer.image), width: 150
         else
           "No image uploaded"
         end
