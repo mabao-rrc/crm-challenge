@@ -31,6 +31,10 @@ gem "activeadmin"
 # Add CSS bundler to support stylesheets like active_admin.css
 gem "cssbundling-rails"
 
+# Adds validation helpers for ActiveStorage attachments (e.g., validates attached image presence/size/type)
+gem "active_storage_validations"
+
+# User authentication for ActiveAdmin
 gem "devise"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
