@@ -1,3 +1,11 @@
-// Entry point for your Sass build
 @import "active_admin/mixins";
 @import "active_admin/base";
+
+.customer-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}

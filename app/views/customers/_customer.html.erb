@@ -1,0 +1,34 @@
+<!-- app/views/customers/_customer.html.erb -->
+
+<div class="box customer-box">
+  <%# Display customer image if attached %>
+  <% if customer.image.attached? %>
+    <figure class="image is-128x128 mb-3 mx-auto">
+      <%= image_tag customer.image,
+                    alt: customer.full_name,
+                    class: "is-rounded",
+                    style: "max-width: 128px; max-height: 128px; object-fit: cover;" %>
+    </figure>
+  <% else %>
+    <p class="has-text-centered"><em>No image available</em></p>
+  <% end %>
+
+  <%# Display full name %>
+  <h3 class="title is-5 has-text-centered"><%= customer.full_name %></h3>
+
+  <%# Display phone number %>
+  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+
+  <%# Conditionally display email address if present %>
+  <% if customer.email_address.present? %>
+    <p><strong>Email:</strong> <%= customer.email_address %></p>
+  <% else %>
+    <p><em>Email not provided</em></p>
+  <% end %>
+
+  <%# Display notes with formatting %>
+  <p><strong>Notes:</strong> <%= simple_format(customer.notes) %></p>
+
+  <%# Add spacer so footer elements push to bottom if needed %>
+  <div class="mt-auto"></div>
+</div>

@@ -1,0 +1,13 @@
+<!-- Page title -->
+<h1 class="title is-3 has-text-centered">Customer List</h1>
+
+<!-- Bulma column layout to display customer cards in a grid -->
+<div class="columns is-multiline">
+  <% @customers.each do |customer| %>
+    <!-- Ensure same height by making each column a flex container -->
+    <div class="column is-one-third is-flex is-flex-direction-column">
+      <!-- Render the _customer.html.erb partial with the current customer -->
+      <%= render partial: "customer", locals: { customer: customer } %>
+    </div>
+  <% end %>
+</div>
