@@ -27,6 +27,10 @@ gem "jbuilder"
 # If you are using PostgreSQL or MySQL, ensure that the appropriate database adapter gem is included in your Gemfile.
 # ActiveAdmin also requires a JavaScript runtime
 gem "activeadmin"
+
+# Add CSS bundler to support stylesheets like active_admin.css
+gem "cssbundling-rails"
+
 gem "devise"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
