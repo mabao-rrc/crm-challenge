@@ -1,3 +1,4 @@
+@import "bootstrap";
 @import "active_admin/mixins";
 @import "active_admin/base";
 
@@ -8,4 +9,25 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+}
+
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+
+  @media (min-width: 576px) {
+    column-count: 2;
+  }
+
+  @media (min-width: 768px) {
+    column-count: 3;
+  }
+
+  @media (min-width: 992px) {
+    column-count: 4;
+  }
+}
+
+.masonry > div {
+  break-inside: avoid;
 }

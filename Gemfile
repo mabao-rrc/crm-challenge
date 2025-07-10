@@ -28,6 +28,13 @@ gem "jbuilder"
 # ActiveAdmin also requires a JavaScript runtime
 gem "activeadmin"
 
+# Add Bootstrap for responsive layout and styling
+# Bootstrap is a popular CSS framework that provides a set of pre-designed components and styles.
+# It helps in building responsive and visually appealing web applications quickly.
+# The "~> 5.3.0" version constraint ensures compatibility with the latest Bootstrap 5 features.
+# [https://getbootstrap.com/]
+gem "bootstrap", "~> 5.3.0"
+
 # Add CSS bundler to support stylesheets like active_admin.css
 gem "cssbundling-rails"
 

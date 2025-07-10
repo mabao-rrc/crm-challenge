@@ -1,20 +1,21 @@
 <!-- Page title -->
-<h1 class="display-5 text-center mb-4">All Customers</h1>
+<h1 class="text-center display-5 mb-4">Alphabetized Customers</h1>
 
 <!-- Navigation links -->
-<div class="d-flex justify-content-center mb-4 gap-2">
+<div class="d-flex justify-content-center gap-2 mb-4">
   <%= link_to "All Customers", root_path, class: "btn btn-outline-secondary" %>
   <%= link_to "Alphabetized", customers_alphabetized_path, class: "btn btn-primary" %>
   <%= link_to "Missing Email", customers_missing_email_path, class: "btn btn-warning" %>
 </div>
 
-<!-- Masonry Grid Layout -->
+<!-- Grid layout using Bootstrap -->
 <div class="container">
-  <div class="masonry">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     <% @customers.each do |customer| %>
-      <div>
+      <div class="col d-flex">
         <%= render partial: "customer", locals: { customer: customer } %>
       </div>
     <% end %>
   </div>
 </div>
+

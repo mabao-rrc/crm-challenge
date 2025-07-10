@@ -1,19 +1,28 @@
 Rails.application.routes.draw do
-  # Admin and authentication routes
+  # ---------------------------------------
+  # CUSTOM ROUTES FOR CUSTOMER FINDERS
+  # ---------------------------------------
+
+  # 1. Route for the index action ("/") that shows all customers
+  root "customers#index"
+
+  # 2. Route for the alphabetized action ("/customers/alphabetized")
+  get "customers/alphabetized", to: "customers#alphabetized", as: :customers_alphabetized
+
+  # 3. Route for the missing_email action ("/customers/missing_email")
+  get "customers/missing_email", to: "customers#missing_email", as: :customers_missing_email
+
+  # ---------------------------------------
+  # DEFAULT DEVISE & ACTIVE ADMIN ROUTES
+  # ---------------------------------------
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  # Customer-facing routes
-  resources :customers, only: [:index]
-
-  # Define the root path route ("/") — optional
-  # You can point this to your public customer list or another controller
-  # root "customers#index"
-
-  # Reveal health status on /up
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Optional: PWA support
+  # Other PWA or API routes (optional)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 end
