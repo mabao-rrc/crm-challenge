@@ -11,6 +11,6 @@ class CustomersController < ApplicationController
 
   # Show customers who have no email address
   def missing_email
-    @customers = Customer.where(email_address: [nil, ""])
+    @customers = Customer.where(email_address: [ nil, "" ])
   end
 end

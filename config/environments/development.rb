@@ -72,6 +72,5 @@ Rails.application.configure do
 
   # This sets the default host for URL generation (used by Active Storage and others)
   # It ensures that methods like `url_for` work correctly in development
-  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
-
+  Rails.application.routes.default_url_options[:host] = "localhost:3000"
 end
