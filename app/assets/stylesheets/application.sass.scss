@@ -3,14 +3,42 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+.customer-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; // Crops but keeps aspect ratio
+  border-radius: 0.5rem;
+}
 .customer-box {
+  margin-bottom: 1rem;
+  background-color: #f8f9fa; // Light background for better contrast
+  border: 1px solid #dee2e6; // Subtle border
+  border-radius: 0.5rem;
+}
+.customer-box .card-body {
+  padding: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  max-width: 200px;
-  box-sizing: border-box;
-  border: red 1px solid;
+}
+.customer-box .card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.customer-box .card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.customer-box .card-text strong {
+  font-weight: 600;
+}
+.customer-box .card-text a {
+  color: #007bff; // Bootstrap primary color
+  text-decoration: none;
+}
+.customer-box .card-text a:hover {
+  text-decoration: underline;
 }
 
 .masonry {
